@@ -1,0 +1,77 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="foreign_keys" author="superuser" context="home_budget">
+
+        <addForeignKeyConstraint  baseColumnNames="client_id"
+                                  baseTableName="expenses"
+                                  constraintName="fk_expense_client"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="clients"
+        />
+
+        <addForeignKeyConstraint  baseColumnNames="category_id"
+                                  baseTableName="expenses"
+                                  constraintName="fk_expense_category"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="categories"
+        />
+
+        <addForeignKeyConstraint  baseColumnNames="role_id"
+                                  baseTableName="users"
+                                  constraintName="fk_user_roles"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="roles"
+        />
+
+        <addForeignKeyConstraint  baseColumnNames="id"
+                                  baseTableName="clients"
+                                  constraintName="fk_client_user"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="users"
+        />
+
+        <addForeignKeyConstraint  baseColumnNames="roles_id"
+                                  baseTableName="permissions_roles"
+                                  constraintName="fk_permissions_roles_role"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="roles"
+        />
+
+        <addForeignKeyConstraint  baseColumnNames="permission_id"
+                                  baseTableName="permissions_roles"
+                                  constraintName="fk_permissions_roles_permission"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="permissions"
+        />
+    </changeSet>
+
+
+</databaseChangeLog>
