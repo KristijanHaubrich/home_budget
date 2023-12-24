@@ -50,6 +50,17 @@
                                   referencedTableName="users"
         />
 
+        <addForeignKeyConstraint  baseColumnNames="id"
+                                  baseTableName="super_users"
+                                  constraintName="fk_superuser_user"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="users"
+        />
+
         <addForeignKeyConstraint  baseColumnNames="roles_id"
                                   baseTableName="permissions_roles"
                                   constraintName="fk_permissions_roles_role"

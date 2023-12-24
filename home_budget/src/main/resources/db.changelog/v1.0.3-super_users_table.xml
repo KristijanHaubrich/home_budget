@@ -4,18 +4,14 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="clients_table" author="superuser" context="home_budget">
-        <createTable tableName="clients">
+    <changeSet id="super_users_table" author="superuser" context="home_budget">
+        <createTable tableName="super_users">
 
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
 
-            <column name="balance" type="double">
-                <constraints nullable="false" />
-            </column>
-
-            <column name="currency" type="varchar">
+            <column name="super_pin" type="varchar">
                 <constraints nullable="false" />
             </column>
 

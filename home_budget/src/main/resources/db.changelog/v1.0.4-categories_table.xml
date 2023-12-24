@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="users_table" author="superuser" context="home_budget">
+    <changeSet id="categories_table" author="superuser" context="home_budget">
         <createTable tableName="categories">
 
             <column name="id" type="bigint" autoIncrement="true">
