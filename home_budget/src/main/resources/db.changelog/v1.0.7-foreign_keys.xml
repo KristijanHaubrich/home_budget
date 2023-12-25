@@ -7,6 +7,17 @@
     <changeSet id="foreign_keys" author="superuser" context="home_budget">
 
         <addForeignKeyConstraint  baseColumnNames="client_id"
+                                  baseTableName="deposits"
+                                  constraintName="fk_deposit_client"
+                                  deferrable="true"
+                                  initiallyDeferred="true"
+                                  onDelete="CASCADE"
+                                  onUpdate="RESTRICT"
+                                  referencedColumnNames="id"
+                                  referencedTableName="clients"
+        />
+
+        <addForeignKeyConstraint  baseColumnNames="client_id"
                                   baseTableName="expenses"
                                   constraintName="fk_expense_client"
                                   deferrable="true"

@@ -25,5 +25,8 @@ public class Client extends Users{
     @JsonManagedReference
     @OneToMany(mappedBy="client")
     private List<Expense> expenses;
+    @JsonManagedReference
+    @OneToMany(mappedBy="client")
+    private List<Deposit> deposits;
 
 }

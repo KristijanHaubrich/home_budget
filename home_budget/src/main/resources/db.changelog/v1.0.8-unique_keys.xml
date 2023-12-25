@@ -15,15 +15,6 @@
                 tableName="users"
         />
         <addUniqueConstraint
-                columnNames="super_pin"
-                constraintName="pin_super_users"
-                deferrable="true"
-                disabled="true"
-                initiallyDeferred="true"
-                schemaName="public"
-                tableName="super_users"
-        />
-        <addUniqueConstraint
                 columnNames="name"
                 constraintName="name_category"
                 deferrable="true"
@@ -32,7 +23,6 @@
                 schemaName="public"
                 tableName="categories"
         />
-
         <addUniqueConstraint
                 columnNames="name"
                 constraintName="name_role"
