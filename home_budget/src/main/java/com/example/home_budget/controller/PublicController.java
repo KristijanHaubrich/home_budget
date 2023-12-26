@@ -17,13 +17,12 @@ public class PublicController {
     public AuthClientResponseDto authClient(@PathVariable String email,@PathVariable String password){
         return publicService.authClient(email, password);
     }
-    @PostMapping("registerClient")
-    public SuccessResponseDto registerClient(@RequestBody RegisterClientRequestDto registerClientDto){
-        return publicService.registerClient(registerClientDto);
-    }
-
     @GetMapping("authSuperUser/{email}/{password}/{superPin}")
     public AuthSuperUserResponseDto authSuperUser(@PathVariable String email, @PathVariable String password, @PathVariable String superPin){
         return publicService.authSuperUser(email,password,superPin);
+    }
+    @PostMapping("registerClient")
+    public SuccessResponseDto registerClient(@RequestBody RegisterClientRequestDto registerClientDto){
+        return publicService.registerClient(registerClientDto);
     }
 }
