@@ -5,9 +5,122 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="adding_permissions" author="superuser" context="home_budget">
+        <!--CATEGORY PERMISSIONS-->
         <insert tableName="permissions">
-            <column name="id" value="1" />
-            <column name="name" value="REGISTER_CLIENT"/>
+            <column name="id" value="-1" />
+            <column name="name" value="GET_ALL_CATEGORIES"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-2" />
+            <column name="name" value="GET_CATEGORY"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-3" />
+            <column name="name" value="CREATE_CATEGORY"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-4" />
+            <column name="name" value="DELETE_CATEGORY"/>
+        </insert>
+
+        <!--CLIENT PERMISSIONS-->
+        <insert tableName="permissions">
+            <column name="id" value="-5" />
+            <column name="name" value="GET_CLIENT_ACCESS_TOKEN"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-6" />
+            <column name="name" value="GET_CLIENT_INFO"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-7" />
+            <column name="name" value="FILTER_CLIENT_DEPOSITS"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-8" />
+            <column name="name" value="FILTER_CLIENT_EXPENSES"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-9" />
+            <column name="name" value="CLIENT_PROFIT"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-10" />
+            <column name="name" value="CHANGE_CLIENT_PASS"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-11" />
+            <column name="name" value="DELETE_CLIENT"/>
+        </insert>
+
+        <!--DEPOSIT_PERMISSIONS-->
+        <insert tableName="permissions">
+            <column name="id" value="-12" />
+            <column name="name" value="GET_ALL_DEPOSITS"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-13" />
+            <column name="name" value="GET_DEPOSIT"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-14" />
+            <column name="name" value="FILTER_DEPOSITS"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-15" />
+            <column name="name" value="CREATE_DEPOSIT"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-16" />
+            <column name="name" value="DELETE_DEPOSIT"/>
+        </insert>
+
+        <!--EXPENSE_PERMISSIONS-->
+        <insert tableName="permissions">
+            <column name="id" value="-17" />
+            <column name="name" value="GET_ALL_EXPENSES"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-18" />
+            <column name="name" value="GET_EXPENSE"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-19" />
+            <column name="name" value="FILTER_EXPENSES"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-20" />
+            <column name="name" value="EDIT_EXPENSE_DESCRIPTION"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-21" />
+            <column name="name" value="CREATE_EXPENSE"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-22" />
+            <column name="name" value="DELETE_EXPENSE"/>
+        </insert>
+
+        <!--SUPER_USER_PERMISSIONS-->
+        <insert tableName="permissions">
+            <column name="id" value="-23" />
+            <column name="name" value="GET_SUPER_USER_ACCESS_TOKEN"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-24" />
+            <column name="name" value="REGISTER_SUPER_USER"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-25" />
+            <column name="name" value="CHANGE_SUPER_USER_PASSWORD"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-26" />
+            <column name="name" value="CHANGE_CLIENT_PASSWORD_DIRECTLY"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="id" value="-27" />
+            <column name="name" value="DELETE_SUPER_USER"/>
         </insert>
 
     </changeSet>

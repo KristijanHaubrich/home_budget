@@ -6,12 +6,12 @@
 
 <changeSet id="adding_roles" author="superuser" context="home_budget">
     <insert tableName="roles">
-        <column name="id" value="1" />
+        <column name="id" value="-1" />
         <column name="name" value="ROLE_SUPERUSER"/>
     </insert>
 
     <insert tableName="roles">
-        <column name="id" value="2" />
+        <column name="id" value="-2" />
         <column name="name" value="ROLE_CLIENT"/>
     </insert>
    

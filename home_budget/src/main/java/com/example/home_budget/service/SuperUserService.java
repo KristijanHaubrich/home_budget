@@ -94,4 +94,14 @@ public class SuperUserService {
 
         return new GetAccessTokenResponseDto(accessToken,superUserDB.isPresent());
     }
+    @Transactional
+    public boolean deleteSuperUser(String email) {
+        Optional<SuperUser> superUser = userRepo.findByEmail(email);
+        boolean success = false;
+        if(superUser.isPresent()){
+            userRepo.delete(superUser.get());
+            success = true;
+        }
+        return success;
+    }
 }

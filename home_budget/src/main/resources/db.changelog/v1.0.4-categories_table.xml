@@ -18,7 +18,4 @@
         </createTable>
 
     </changeSet>
-
-
-
 </databaseChangeLog>

@@ -64,7 +64,7 @@ public class DepositService {
             Optional<Client> clientDB = clientRepo.findByEmail(createDepositRequestDto.getClientEmail());
             boolean clientExist = clientDB.isPresent();
             boolean isSuccess = false;
-            if(clientExist){
+            if(clientExist && createDepositRequestDto.getAmount() > 0){
                 LocalDateTime.parse(createDepositRequestDto.getDate(),dtf);
                 Deposit deposit = depositMapper.map(createDepositRequestDto);
                 deposit.setClient(clientDB.get());
@@ -79,5 +79,15 @@ public class DepositService {
         }catch(DateTimeParseException e){
             return new CreateDepositResponseDto(true,false,false);
         }
+    }
+    @Transactional
+    public boolean deleteDeposit(Long id) {
+        Optional<Deposit> depositDB = depositRepo.findById(id);
+        boolean success = false;
+        if(depositDB.isPresent()){
+            depositRepo.delete(depositDB.get());
+            success = true;
+        }
+        return success;
     }
 }

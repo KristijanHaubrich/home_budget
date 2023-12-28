@@ -70,7 +70,7 @@ public class ExpenseService {
            boolean categoryExist = categoryDB.isPresent();
            boolean isSuccess = false;
 
-           if(clientExist && categoryExist){
+           if(clientExist && categoryExist && createExpenseRequestDto.getAmount() > 0){
                LocalDateTime.parse(createExpenseRequestDto.getDate(),dtf);
                Expense expense = expenseMapper.map(createExpenseRequestDto);
                expense.setClient(clientDB.get());
@@ -89,5 +89,25 @@ public class ExpenseService {
            return new CreateExpenseResponseDto(true,true,false,false);
         }
 
+    }
+    @Transactional
+    public boolean editDescription(Long id, String description) {
+        Optional<Expense> expenseDB = expenseRepo.findById(id);
+        boolean success = false;
+        if(expenseDB.isPresent()){
+            expenseDB.get().setDescription(description);
+            success = true;
+        }
+        return success;
+    }
+    @Transactional
+    public boolean deleteExpense(Long id) {
+        Optional<Expense> expenseDB = expenseRepo.findById(id);
+        boolean success = false;
+        if(expenseDB.isPresent()){
+            expenseRepo.delete(expenseDB.get());
+            success = true;
+        }
+        return success;
     }
 }

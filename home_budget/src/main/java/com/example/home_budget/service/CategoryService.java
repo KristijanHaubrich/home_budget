@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,5 +27,25 @@ public class CategoryService {
             isSuccess = true;
         }
         return new CreateCategoryResponseDto(categoryExist,isValidName,isSuccess);
+    }
+    @Transactional
+    public List<Category> getAllCategories() {
+        return categoryRepo.findAll();
+    }
+    @Transactional
+    public Category getCategoryById(Long id) {
+        Optional<Category> categoryDB = categoryRepo.findById(id);
+        if(categoryDB.isPresent()) return categoryDB.get();
+        return null;
+    }
+    @Transactional
+    public Boolean deleteCategory(Long id) {
+        Optional<Category> categoryDB = categoryRepo.findById(id);
+        boolean success = false;
+        if(categoryDB.isPresent()) {
+            categoryRepo.delete(categoryDB.get());
+            success = true;
+        }
+        return success;
     }
 }

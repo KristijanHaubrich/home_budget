@@ -32,6 +32,15 @@
                 schemaName="public"
                 tableName="roles"
         />
+        <addUniqueConstraint
+                columnNames="name"
+                constraintName="name_permission"
+                deferrable="true"
+                disabled="true"
+                initiallyDeferred="true"
+                schemaName="public"
+                tableName="permissions"
+        />
     </changeSet>
 
 </databaseChangeLog>

@@ -1,0 +1,41 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="adding_predefined_categories" author="superuser" context="home_budget">
+        <insert tableName="categories">
+            <column name="id" value="-1" />
+            <column name="name" value="food"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="id" value="-2" />
+            <column name="name" value="cosmetics"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="id" value="-3" />
+            <column name="name" value="home expenses"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="id" value="-4" />
+            <column name="name" value="car"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="id" value="-5" />
+            <column name="name" value="clothes"/>
+        </insert>
+
+        <insert tableName="categories">
+            <column name="id" value="-6" />
+            <column name="name" value="gifts"/>
+        </insert>
+
+
+    </changeSet>
+
+</databaseChangeLog>

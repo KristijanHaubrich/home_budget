@@ -6,15 +6,15 @@
 
     <changeSet id="adding_super_user" author="superuser" context="home_budget">
         <insert tableName="users">
-            <column name="id" value="0" />
+            <column name="id" value="-1" />
             <column name="name" value="Kristijan Haubrich"/>
             <column name="email" value="kiki.hauba@gmail.com" />
-            <column name="role_id" value="1" />
+            <column name="role_id" value="-1" />
             <column name="password" value="$2a$10$iM9q9UeYsuE2/dQYW8lhmOsMKlGjkeuef8s4FjBxmA37r5o3vzcqi" /> <!--actual pass is "1234" when decoded-->
         </insert>
 
         <insert tableName="super_users">
-            <column name="id" value="0" />
+            <column name="id" value="-1" />
             <column name="super_pin" value="12345"/>
         </insert>
 

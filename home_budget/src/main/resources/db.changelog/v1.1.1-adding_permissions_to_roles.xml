@@ -5,14 +5,219 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="adding_permissions_to_roles" author="superuser" context="home_budget">
+
+        <!--GET_ALL_CATEGORIES-->
         <insert tableName="permissions_roles">
-            <column name="roles_id" value="1" />
-            <column name="permission_id" value="1"/>
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-1"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-1"/>
         </insert>
 
+        <!--GET_CATEGORY-->
         <insert tableName="permissions_roles">
-            <column name="roles_id" value="2" />
-            <column name="permission_id" value="1"/>
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-2"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-2"/>
+        </insert>
+
+        <!--CREATE_CATEGORY-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-3"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-3"/>
+        </insert>
+
+        <!--DELETE_CATEGORY-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-4"/>
+        </insert>
+
+        <!--GET_CLIENT_ACCESS_TOKEN-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-5"/>
+        </insert>
+
+        <!--GET_CLIENT_INFO-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-6"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-6"/>
+        </insert>
+
+        <!--FILTER_CLIENT_DEPOSITS-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-7"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-7"/>
+        </insert>
+
+        <!--FILTER_CLIENT_EXPENSES-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-8"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-8"/>
+        </insert>
+
+        <!--CLIENT_PROFIT-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-9"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-9"/>
+        </insert>
+
+        <!--CHANGE_CLIENT_PASS-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-10"/>
+        </insert>
+
+        <!--DELETE_CLIENT-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-11"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-11"/>
+        </insert>
+
+        <!--GET_ALL_DEPOSITS-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-12"/>
+        </insert>
+
+        <!--GET_DEPOSIT-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-13"/>
+        </insert>
+
+        <!--FILTER_DEPOSITS-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-14"/>
+        </insert>
+
+        <!--CREATE_DEPOSIT-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-15"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-15"/>
+        </insert>
+
+        <!--DELETE_DEPOSIT-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-16"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-16"/>
+        </insert>
+
+        <!--GET_ALL_EXPENSES-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-17"/>
+        </insert>
+
+        <!--GET_EXPENSE-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-18"/>
+        </insert>
+
+        <!--FILTER_EXPENSES-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-19"/>
+        </insert>
+
+        <!--EDIT_EXPENSE_DESCRIPTION-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-20"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-20"/>
+        </insert>
+
+        <!--CREATE_EXPENSE-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-21"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-21"/>
+        </insert>
+
+        <!--DELETE_EXPENSE-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-22"/>
+        </insert>
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-2" />
+            <column name="permission_id" value="-22"/>
+        </insert>
+
+        <!--GET_SUPER_USER_ACCESS_TOKEN-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-23"/>
+        </insert>
+
+        <!--REGISTER_SUPER_USER-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-24"/>
+        </insert>
+
+        <!--CHANGE_SUPER_USER_PASSWORD-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-25"/>
+        </insert>
+
+        <!--CHANGE_CLIENT_PASSWORD_DIRECTLY-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-26"/>
+        </insert>
+
+        <!--DELETE_SUPER_USER-->
+        <insert tableName="permissions_roles">
+            <column name="roles_id" value="-1" />
+            <column name="permission_id" value="-27"/>
         </insert>
 
     </changeSet>
