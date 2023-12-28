@@ -26,7 +26,6 @@ public class SuperUserController {
     public ClientChangePassResponseDto changePass(@RequestBody ChangePassSuperUserRequestDto changePassSuperUserRequestDto){
         return  superUserService.changePass(changePassSuperUserRequestDto);
     }
-
     @PatchMapping("changeClientPass/{clientEmail}/{newPass}")
     public SuccessResponseDto changeClientPass(@PathVariable String clientEmail,@PathVariable String newPass){
         return  superUserService.changeClientPass(clientEmail,newPass);

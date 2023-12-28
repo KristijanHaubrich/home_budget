@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/clients/")
 public class ClientController {
     private final ClientService clientService;
-
     @GetMapping("getAccessToken/{email}")
     public GetAccessTokenResponseDto getAccessToken(@PathVariable String email){
         return clientService.getAccessToken(email);
     }
-
+    
     @PatchMapping("changePass")
     public ClientChangePassResponseDto changePass(@RequestBody ChangeClientPassRequestDto changeClientPassRequestDto){
         return clientService.changePass(changeClientPassRequestDto);
