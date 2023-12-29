@@ -8,6 +8,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface SuperUserMapper {
     SuperUser map(RegisterSuperUserRequestDto registerSuperUserRequestDto);
-
     SuperUserInfo map(SuperUser superUser);
 }

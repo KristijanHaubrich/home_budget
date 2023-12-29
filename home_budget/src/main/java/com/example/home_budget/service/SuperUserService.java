@@ -6,6 +6,7 @@ import com.example.home_budget.dto.request.RegisterSuperUserRequestDto;
 import com.example.home_budget.dto.response.GetAccessTokenResponseDto;
 import com.example.home_budget.dto.response.SuccessResponseDto;
 import com.example.home_budget.dto.response.ClientChangePassResponseDto;
+import com.example.home_budget.dto.response.SuperUserInfo;
 import com.example.home_budget.jpa_repository.ClientRepo;
 import com.example.home_budget.jpa_repository.RoleRepo;
 import com.example.home_budget.jpa_repository.SuperUserRepo;
@@ -103,5 +104,13 @@ public class SuperUserService {
             success = true;
         }
         return success;
+    }
+    @Transactional
+    public SuperUserInfo getUserInfo(String email) {
+        Optional<SuperUser> superUserDB = userRepo.findByEmail(email);
+        if(superUserDB.isPresent()){
+            return superUserMapper.map(superUserDB.get());
+        }
+        return null;
     }
 }

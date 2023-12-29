@@ -5,6 +5,7 @@ import com.example.home_budget.dto.request.RegisterSuperUserRequestDto;
 import com.example.home_budget.dto.response.GetAccessTokenResponseDto;
 import com.example.home_budget.dto.response.SuccessResponseDto;
 import com.example.home_budget.dto.response.ClientChangePassResponseDto;
+import com.example.home_budget.dto.response.SuperUserInfo;
 import com.example.home_budget.service.SuperUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,6 +20,11 @@ public class SuperUserController {
     @PreAuthorize("hasAuthority('GET_SUPER_USER_ACCESS_TOKEN')")
     public GetAccessTokenResponseDto getAccessToken(@PathVariable String email){
         return superUserService.getAccessToken(email);
+    }
+    @GetMapping("getSuperUserInfo/{email}")
+    @PreAuthorize("hasAnyRole('SUPERUSER')")
+    public SuperUserInfo getSuperUserInfo(@PathVariable String email){
+        return superUserService.getUserInfo(email);
     }
     @PostMapping("registerSuperUser")
     @PreAuthorize("hasAuthority('REGISTER_SUPER_USER')")

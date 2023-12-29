@@ -37,6 +37,11 @@ public class DepositController {
     public CreateDepositResponseDto createDeposit(@RequestBody CreateDepositRequestDto createDepositRequestDto){
         return depositService.createDeposit(createDepositRequestDto);
     }
+    @PatchMapping("editDescription/{id}/{description}")
+    @PreAuthorize("hasAnyRole('SUPERUSER,CLIENT')")
+    public boolean editDescription(@PathVariable Long id, @PathVariable String description){
+        return depositService.editDescription(id,description);
+    }
     @DeleteMapping("{id}")
     @PreAuthorize("hasAuthority('DELETE_DEPOSIT')")
     public boolean deleteDeposit(@PathVariable Long id){

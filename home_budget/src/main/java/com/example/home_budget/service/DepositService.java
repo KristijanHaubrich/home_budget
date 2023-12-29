@@ -90,4 +90,13 @@ public class DepositService {
         }
         return success;
     }
+    @Transactional
+    public boolean editDescription(Long id, String description) {
+        Optional<Deposit> depositDB = depositRepo.findById(id);
+        if(depositDB.isPresent()){
+            depositDB.get().setDescription(description);
+            return true;
+        }
+        return false;
+    }
 }

@@ -44,7 +44,6 @@ public class ExpenseController {
     public CreateExpenseResponseDto createExpense(@RequestBody CreateExpenseRequestDto createExpenseRequestDto){
         return expenseService.createExpense(createExpenseRequestDto);
     }
-
     @DeleteMapping("{id}")
     @PreAuthorize("hasAuthority('DELETE_EXPENSE')")
     public boolean deleteExpense(@PathVariable Long id){
