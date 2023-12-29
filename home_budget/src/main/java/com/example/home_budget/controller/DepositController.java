@@ -24,7 +24,7 @@ public class DepositController {
     }
     @GetMapping("{id}")
     @PreAuthorize("hasAuthority('GET_DEPOSIT')")
-    public Deposit getExpenseById(@PathVariable Long id){
+    public Deposit getDepositById(@PathVariable Long id){
         return depositService.getDepositById(id);
     }
     @GetMapping("filterDeposits")
@@ -38,7 +38,7 @@ public class DepositController {
         return depositService.createDeposit(createDepositRequestDto);
     }
     @PatchMapping("editDescription/{id}/{description}")
-    @PreAuthorize("hasAnyRole('SUPERUSER,CLIENT')")
+    @PreAuthorize("hasAnyRole('SUPERUSER','CLIENT')")
     public boolean editDescription(@PathVariable Long id, @PathVariable String description){
         return depositService.editDescription(id,description);
     }

@@ -41,7 +41,9 @@ public class ExpenseService {
     }
     @Transactional
     public Expense getExpenseById(Long id) {
-        return expenseRepo.getReferenceById(id);
+        Optional<Expense> expenseDB = expenseRepo.findById(id);
+        if(expenseDB.isPresent()) return expenseDB.get();
+        return null;
     }
     @Transactional
     public ExpensesFilterResponseDto filterExpenses(ExpensesFilterRequestDto expensesFilterRequestDto) {

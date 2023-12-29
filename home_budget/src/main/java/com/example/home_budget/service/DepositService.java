@@ -40,7 +40,9 @@ public class DepositService {
     }
     @Transactional
     public Deposit getDepositById(Long id) {
-        return depositRepo.getReferenceById(id);
+        Optional<Deposit> depositDB = depositRepo.findById(id);
+        if(depositDB.isPresent()) return depositDB.get();
+        return null;
     }
     @Transactional
     public DepositsFilterResponseDto filterDeposits(DepositsFilterRequestDto depositsFilterRequestDto) {
